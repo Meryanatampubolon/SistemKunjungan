@@ -1,0 +1,518 @@
+<style>
+ 
+    .tab-content .tab-pane {
+        padding: 20px 0;
+    }
+
+    /* .input-group-append {
+        cursor: pointer;
+    } */
+  </style>
+
+
+<div class="container">
+    <main>
+        <div class="container">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="tab1">
+                    <div class="row g-5">
+                        <div class="col-md-5 col-lg-5 order-md-last">
+                            <h4 class="mb-3">Data Tamu</h4>
+                            <form class="needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-sm-12">
+                                        <label for="Tanggal" class="form-label">Tanggal</label>
+                                        <div class="input-group date" id="datepicker">
+                                            <input type="text" class="form-control" id="date"/>
+                                            <span class="input-group-append">
+                                                <span class="input-group-text bg-light d-block"><i class="fa fa-calendar"></i></span>
+                                            </span>
+                                        </div> 
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Nama" class="form-label">Nama</label>
+                                        <input type="text" class="form-control" id="Nama" placeholder="" value="">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Rombongan">Anggota Rombongan</label>
+                                        <textarea class="form-control" id="Rombongan" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <label for="Pengunjung" class="form-label">Asal Pengunjung</label>
+                                        <input type="text" class="form-control" id="Pengunjung" placeholder="" value="">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Tujuan" class="form-label">Tujuan</label>
+                                        <input type="text" class="form-control" id="Tujuan" placeholder="" value="">
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Tujuan" class="form-label">Keperluan</label>
+                                        <input type="text" class="form-control" id="Tujuan" placeholder="" value="">
+                                    </div>
+                                    <a class="btn btn-primary" style="padding-top: 10px;" href="#" id="NextButton" type="submit">Selanjutnya</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class="container-fluid" id='camcam'>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div id="vid" class='son'>
+                                            <video id='video' style="height: 400px;"></video>
+                                        </div>
+                                        <div id="capture" class='son'>
+                                            <canvas id='canvas'></canvas>
+                                            <canvas id='blank' style='display:none;'></canvas>
+                                        </div> 
+                                        <div id="control">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-6"><a id='retake' class='btn btn-block m-1 hov'><i class="fas fa-sync-alt"></i></a></div>
+                                                    <div class="col-md-6"><a id='snap' class='btn btn-block m-1 hov'><i class="fas fa-camera"></i></a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div role="tabpanel" class="tab-pane" id="tab2">
+                    <div class="row">
+                        <h4 class="mb-3" style="text-align: center;">KUISIONER KEPUASAN MASYARAKAT (SKM) </h4>
+                        <h4 class="mb-3" style="text-align: center;"> PADA UNIT LAYANAN SEKERTARIAT DPRD PROVINSI JAMBI </h4>
+                        <div class="col-md-6 col-lg-6">
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="k_pertama" class="form-label">1. Bagaimana pendapat saudara tentang kesesuaian pelayanan dengan jenis pelayanannya</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_pertama" id="radio_pertama_1"checked>
+                                            <label class="form-check-label" for="radio_pertama_1">
+                                            Tidak Sesuai
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_pertama" id="radio_pertama_2" >
+                                            <label class="form-check-label" for="radio_pertama_2">
+                                            Kurang Sesuai
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_pertama" id="radio_pertama_3" >
+                                            <label class="form-check-label" for="radio_pertama_3">
+                                            Mudah sesuai
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_pertama" id="radio_pertama_4" >
+                                            <label class="form-check-label" for="radio_pertama_4">
+                                            Sangat Sesuai
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="k_pertama" class="form-label">3. Bagaimana pendapat saudara tentang kecepatan dalam memberikan Pelanyanan</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedua" id="radio_kedua_1"checked>
+                                            <label class="form-check-label" for="radio_kedua_1">
+                                            Tidak Cepat
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedua" id="radio_kedua_2" >
+                                            <label class="form-check-label" for="radio_kedua_2">
+                                            Kurang Cepat
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedua" id="radio_kedua_3" >
+                                            <label class="form-check-label" for="radio_kedua_2">
+                                            Cepat
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedua" id="radio_kedua_4" >
+                                            <label class="form-check-label" for="radio_kedua_4">
+                                            Sangat Cepat
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-12">
+                                        <label for="k_pertama" class="form-label">5. Bagaimana pendapat saudara tentang konpetensi/kemampuan petugas dalam pelayanan </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketiga" id="radio_ketiga_1"checked>
+                                            <label class="form-check-label" for="radio_ketiga_1">
+                                            Tidak kompeten
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketiga" id="radio_ketiga_2" >
+                                            <label class="form-check-label" for="radio_ketiga_2">
+                                            Kurang kompeten
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketiga" id="radio_ketiga_3" >
+                                            <label class="form-check-label" for="radio_ketiga_3">
+                                            Kompeten
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketiga" id="radio_ketiga_4" >
+                                            <label class="form-check-label" for="radio_ketiga_4">
+                                            Sangat kompeten
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h4 class="mb-3"></h4>
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="Nama" class="form-label">2. Bagaimana pemahaman saudara tentang kemudahan prosedure pelayanan di unit ini </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keempat" id="radio_keempat_1"checked>
+                                            <label class="form-check-label" for="radio_keempat_1">
+                                            Tidak mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keempat" id="radio_keempat_2" >
+                                            <label class="form-check-label" for="radio_keempat_2">
+                                            Kurang mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keempat" id="radio_keempat_3" >
+                                            <label class="form-check-label" for="radio_keempat_3">
+                                            Mudah 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keempat" id="radio_keempat_4" >
+                                            <label class="form-check-label" for="radio_keempat_4">
+                                            Sangat mudah
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Nama" class="form-label">2. Bagaimana pendapat saudara tentang perilaku petugas dalam pelayanan terkait kesopanan dan keramahan</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kelima" id="radio_kelima_1"checked>
+                                            <label class="form-check-label" for="radio_kelima_1">
+                                            Tidak mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kelima" id="radio_kelima_2" >
+                                            <label class="form-check-label" for="radio_kelima_2">
+                                            Kurang mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kelima" id="radio_kelima_3" >
+                                            <label class="form-check-label" for="radio_kelima_3">
+                                            Mudah 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kelima" id="radio_kelima_4" >
+                                            <label class="form-check-label" for="radio_kelima_4">
+                                            Sangat mudah
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <label for="Nama" class="form-label">2. Bagaimana pemahaman saudara tentang kualitas sarana dan prasarana </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keenam" id="radio_keenam_1"checked>
+                                            <label class="form-check-label" for="radio_keenam_1">
+                                            Tidak mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keenam" id="radio_keenam_2" >
+                                            <label class="form-check-label" for="radio_keenam_2">
+                                            Kurang mudah
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keenam" id="radio_keenam_3" >
+                                            <label class="form-check-label" for="radio_keenam_3">
+                                            Mudah 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_keenam" id="radio_keenam_4" >
+                                            <label class="form-check-label" for="radio_keenam_4">
+                                            Sangat mudah
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                               <div class="col-auto" style="text-align: right;">
+                                <a class="btn btn-primary" style="padding-top: 10px;" href="#" id="NextButton2_1" type="submit">Kembali    </a>
+                                <a class="btn btn-primary" style="padding-top: 10px;" href="#" id="NextButton2" type="submit">Selanjutnya</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>   
+                <div role="tabpanel" class="tab-pane" id="tab3">
+                    <div class="row">
+                        <h4 class="mb-3" style="text-align: center;">KUISIONER KEPUASAN MASYARAKAT (SKM) </h4>
+                        <h4 class="mb-3" style="text-align: center;"> PADA UNIT LAYANAN SEKERTARIAT DPRD PROVINSI JAMBI </h4>
+                        <div class="col-md-6 col-lg-6">
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="k_pertama" class="form-label">7. Bagaimana pendapat saudara tentang penanganan panduan penggunaan layanan</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketujuh" id="radio_ketujuh_1"checked>
+                                            <label class="form-check-label" for="radio_ketujuh_1">
+                                                Tidak ada 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketujuh" id="radio_ketujuh_2" >
+                                            <label class="form-check-label" for="radio_ketujuh_2">
+                                            Ada tapi tidak berfungsi
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketujuh" id="radio_ketujuh_3" >
+                                            <label class="form-check-label" for="radio_ketujuh_3">
+                                            Berfungsi Kurang maksimal
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_ketujuh" id="radio_ketujuh_4" >
+                                            <label class="form-check-label" for="radio_ketujuh_4">
+                                            Dikelola dengan Baik
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="k_pertama" class="form-label">9. Bagaimana pendapat saudara tentang tanggapan aspirasi masyarakat oleh Anggota Dewan </label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedelapan" id="radio_kedelapan_1"checked>
+                                            <label class="form-check-label" for="radio_kedelapan_1">
+                                            Buruk
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedelapan" id="radio_kedelapan_2" >
+                                            <label class="form-check-label" for="radio_kedelapan_2">
+                                            Cukup
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedelapan" id="radio_kedelapan_3" >
+                                            <label class="form-check-label" for="radio_kedelapan_3">Baik</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kedelapan" id="radio_kedelapan_4" >
+                                            <label class="form-check-label" for="radio_kedelapan_4">Sangat baik</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <h4 class="mb-3"></h4>
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="Nama" class="form-label">8. Bagaimana pendapat saudara tentang informasi kegiatan DPRD di masyarakat</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kesembilan" id="radio_kesembilan_1"checked>
+                                            <label class="form-check-label" for="radio_kesembilan_1">Buruk</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kesembilan" id="radio_kesembilan_2" >
+                                            <label class="form-check-label" for="radio_kesembilan_2">
+                                            Cukup
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kesembilan" id="radio_kesembilan_3" >
+                                            <label class="form-check-label" for="radio_kesembilan_3">
+                                            Baik 
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="radio_kesembilan" id="radio_kesembilan_4" >
+                                            <label class="form-check-label" for="radio_kesembilan_4">
+                                            Sangat baik
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="Rombongan">Masukan dan Saran</label>
+                                        <textarea class="form-control" id="Rombongan" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                    </div>
+                                </div>
+                               <div class="col-auto" style="text-align: right; padding-top: 20px;;">
+                                <a class="btn btn-primary" style="padding-top: 10px;" href="#" id="NextButton3" type="submit">Kembali    </a>
+                                <a class="btn btn-primary" style="padding-top: 10px;" href="#" id="Cetak" type="submit">Cetak</a>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>    
+            </div>    
+        </div>
+    </main>
+ 
+</div>
+
+<div id="push"></div>
+
+<script>    
+    var token = '<%= csrfToken %>'
+     
+    $(document).ready(function() {
+        // $('#control').hide();
+        opencam();
+        $('#control').show();
+
+        $('#video').resize(function(){
+        $('#cont').height($('#video').height());
+            $('#cont').width($('#video').width());
+            $('#control').height($('#video').height()*0.1);
+            $('#control').css('top',$('#video').height()*0.9 );
+            $('#control').width($('#video').width());
+            $('#control').show();
+        });
+
+   
+
+    function opencam(){
+      navigator.getUserMedia= navigator.getUserMedia ||   navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.oGetUserMedia || navigator.msGetUserMedia ;
+      if(navigator.getUserMedia)
+      {
+        navigator.getUserMedia({video:true },  streamWebCam ,throwError) ;
+      }
+    };
+    
+    function closecam(){
+      video.pause();
+      try {
+        video.srcObject = null;
+      } catch (error) {
+        video.src =null;
+      }
+      var track = strr.getTracks()[0];  // if only one media track
+      track.stop();
+    };
+
+    var video= document.getElementById('video');
+    var canvas= document.getElementById('canvas');
+    var context= canvas.getContext('2d');
+    var strr;
+
+    function streamWebCam(stream){
+      const  mediaSource = new MediaSource(stream);
+      try {
+          video.srcObject = stream;
+        } catch (error) {
+          video.src = URL.createObjectURL(mediaSource);
+        }
+        video.play();
+        strr=stream;
+    }
+
+    function throwError(e){
+        alert(e.name);
+    }
+
+    $('#open').click(function(event) {
+      opencam();
+       $('#control').show();
+    });
+
+    $('#close').click(function(event) {
+      closecam();
+    });
+
+    $('#snap').click(function(event) {
+          canvas.width=video.clientWidth;
+          canvas.height=video.clientHeight;
+          context.drawImage(video,0,0);
+          $('#vid').css('z-index','20');
+          $('#capture').css('z-index','30');
+    });
+
+    $('#retake').click(function(event) {
+        $('#vid').css('z-index','30');
+        $('#capture').css('z-index','20');
+    });
+
+    $('#NextButton').click(function(){
+        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+    });
+
+    $('#NextButton').click(function(){
+        var element = document.getElementById("tab2");
+        element.classList.add("active");
+        var element = document.getElementById("tab1");
+        element.classList.remove("active");
+    });
+
+    $('#NextButton2').click(function(){
+        // $('#nav-tabs > .active').next('li').find('a').trigger('click');
+
+        var element = document.getElementById("tab3");
+        element.classList.add("active");
+        var element = document.getElementById("tab2");
+        element.classList.remove("active");
+    });
+
+    $('#NextButton3').click(function(){
+      
+        var element = document.getElementById("tab2");
+        element.classList.add("active");
+        var element = document.getElementById("tab3");
+        element.classList.remove("active");
+    });
+
+    $('#Cetak').click(function(){
+      
+      var element = document.getElementById("tab2");
+      element.classList.add("active");
+      var element = document.getElementById("tab3");
+      element.classList.remove("active");
+  });
+
+    
+    $('#NextButton2_1').click(function(){
+      var element = document.getElementById("tab1");
+      element.classList.add("active");
+      var element = document.getElementById("tab2");
+      element.classList.remove("active");
+    });
+
+    
+    $(function(){
+        $('#datepicker').datepicker(
+            {
+                format: 'dd-M-yyyy'
+            }
+        );
+    });
+
+    // $('#datepicker').datetimepicker({
+    //     format: 'dd-MM-yyyy'
+    // });
+});
+    
+
+    </script>
